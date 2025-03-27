@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
+import 'package:weatherforecast/viewmodels/weather_view_model.dart';
 import 'package:weatherforecast/views/hone_screen.dart';
 import 'package:weatherforecast/views/splash_screen.dart';
 
 import 'core/service/navigation.service.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  await dotenv.load(fileName: ".env");
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => WeatherViewModel()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,11 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      navigatorKey: navigationService.navigatorKey, // Sử dụng navigation service
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-      },
+     home: HomeScreen(),
     );
   }
 }

@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:provider/provider.dart';
 
+import '../viewmodels/weather_view_model.dart';
 import '../widgets/forecast_item.dart';
 import 'home_sidebar.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final weatherProvider = Provider.of<WeatherViewModel>(context);
     return Scaffold(
+
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
-          'Berlin, Germany',
+          weatherProvider.weather?.location.name ?? 'Loading...',
           style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black),
         ),
         centerTitle: true,

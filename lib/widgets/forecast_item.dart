@@ -7,11 +7,11 @@ class ForecastItem extends StatelessWidget {
   final String temp;
 
   const ForecastItem({
-    Key? key,
+    super.key,
     required this.time,
     required this.iconPath,
     required this.temp,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
