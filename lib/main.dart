@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherforecast/viewmodels/weather_view_model.dart';
-import 'package:weatherforecast/views/hone_screen.dart';
-import 'package:weatherforecast/views/splash_screen.dart';
+import 'package:weatherforecast/views/home_screen/hone_screen.dart';
+import 'package:weatherforecast/views/splash/splash_screen.dart';
 
 import 'core/service/navigation.service.dart';
 

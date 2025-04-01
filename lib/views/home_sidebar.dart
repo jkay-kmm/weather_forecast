@@ -28,14 +28,14 @@ class HomeSidebar extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Current Location",
+                    "Vị trí hiện tại",
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Colors.white70,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 16),
                   Row(
                     children: [
                       Icon(Icons.location_on, color: Colors.white, size: 20),
@@ -50,10 +50,10 @@ class HomeSidebar extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 60),
                   ListTile(
-                    leading: Icon(Icons.add_location_alt, color: Colors.blue),
-                    title: Text("Add Location"),
+                    leading: Icon(Icons.add_location_alt, color: Colors.white60),
+                    title: Text("Thêm vị trí", style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -75,8 +75,8 @@ class HomeSidebar extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.settings, color: Colors.blue),
-                    title: Text("Settings"),
+                    leading: Icon(Icons.settings, color: Colors.white),
+                    title: Text("Settings", style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -103,10 +103,10 @@ class HomeSidebar extends StatelessWidget {
       child: Row(
         children: [
           Icon(Icons.location_on, color: Colors.white70, size: 18),
-          SizedBox(width: 8),
+          SizedBox(width: 16),
           Text(
             location,
-            style: GoogleFonts.poppins(fontSize: 14, color: Colors.white),
+            style: GoogleFonts.poppins(fontSize: 15, color: Colors.white),
           ),
         ],
       ),
