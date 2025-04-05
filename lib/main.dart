@@ -13,7 +13,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => WeatherViewModel()),
+        ChangeNotifierProvider(create: (context) => WeatherViewModel()),
       ],
       child: MyApp(),
     ),
@@ -21,6 +21,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

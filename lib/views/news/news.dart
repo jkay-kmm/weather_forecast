@@ -61,7 +61,7 @@ class News extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              "Here's what to expect from Tuesday weather forecast",
+              "Đây là những gì mong đợi từ dự báo thời tiết thứ ba",
               style: GoogleFonts.poppins(
                 color: Color(0xFF363B64),
                 fontSize: 20,
@@ -70,7 +70,7 @@ class News extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              "The contrast and colors employed when designing user interface elements can have a huge impact on their accessibility to all end-users. Relying solely on color distinctions limits the ability of color blind individuals to use your product. Using light and dark colors combined with techniques such as cross-hatching to differentiate part of the interface make it more accessible for users with vision issues. This design mentality can result in more interesting and usable interfaces for all of your users.",
+              "Độ tương phản và màu sắc được sử dụng khi thiết kế các yếu tố giao diện người dùng có thể có tác động rất lớn đến khả năng tiếp cận của chúng đối với tất cả người dùng cuối. Chỉ dựa vào sự phân biệt màu sắc giới hạn khả năng của những người mù màu sử dụng sản phẩm của bạn. Sử dụng các màu sáng và tối kết hợp với các kỹ thuật như tập trung chéo để phân biệt một phần của giao diện giúp người dùng có các vấn đề về tầm nhìn dễ tiếp cận hơn. Tâm lý thiết kế này có thể dẫn đến các giao diện thú vị và có thể sử dụng hơn cho tất cả người dùng của bạn.",
               style: GoogleFonts.poppins(
                 color: Color(0xFF363B64),
                 fontSize: 16,

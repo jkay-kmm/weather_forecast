@@ -20,10 +20,6 @@ class ForecastSection extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Partly Cloudy", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500, color: Color(0xFFA098AE))),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
             child: Text("August, 10th 2020", style: GoogleFonts.poppins(fontSize: 16, color: Color(0xFF363B64),fontWeight: FontWeight.bold)),
           ),
           SizedBox(height: 12),
@@ -33,6 +29,8 @@ class ForecastSection extends StatelessWidget {
               ForecastItem(time: "2 PM", iconPath: "assets/icons/image 16.png", temp: "30°C"),
               ForecastItem(time: "3 PM", iconPath: "assets/icons/image 17.png", temp: "28°C"),
               ForecastItem(time: "4 PM", iconPath: "assets/icons/image 18.png", temp: "26°C"),
+              ForecastItem(time: "5 PM", iconPath: "assets/icons/image 16.png", temp: "30°C"),
+              ForecastItem(time: "6 PM", iconPath: "assets/icons/image 17.png", temp: "28°C"),
             ],
           ),
         ],

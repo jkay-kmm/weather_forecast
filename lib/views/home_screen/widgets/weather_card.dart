@@ -3,81 +3,85 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class WeatherCardCarousel extends StatelessWidget {
-  const WeatherCardCarousel({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Weather Forecast"),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            CarouselSlider(
-              options: CarouselOptions(
-                height: 300.0,
-                enlargeCenterPage: true,  // Tạo hiệu ứng phóng to
-                autoPlay: true,  // Tự động chuyển động
-                aspectRatio: 16 / 9,
-                viewportFraction: 0.8,  // Điều chỉnh tỷ lệ hiển thị
-              ),
-              items: [
-                WeatherCard(),
-                WeatherCard(),
-                WeatherCard(),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class WeatherCard extends StatelessWidget {
-  const WeatherCard({super.key});
+  final int humidity;
+  final double temperatureC;
+  final String cityName;
+  final String conditionText;
+  final String iconUrl;
+  final double windSpeed;
+
+  const WeatherCard({
+    super.key,
+    required this.humidity,
+    required this.temperatureC,
+    required this.cityName,
+    required this.conditionText,
+    required this.iconUrl,
+    required this.windSpeed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.blueAccent,
+        color: Color(0xFF7CA9FF),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Tỉ lệ mưa 60%", style: GoogleFonts.poppins(color: Colors.white, fontSize: 14)),
+          Text(
+            "Tỉ lệ mưa $humidity%",
+            style: GoogleFonts.poppins(color: Colors.white, fontSize: 14),
+          ),
           SizedBox(height: 8),
           Row(
             children: [
-              Text("Một phần mây", style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
+              Text(
+                conditionText,
+                style: GoogleFonts.poppins(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               Spacer(),
-              Image.asset("assets/images/image 4.png", width: 78, height: 73,),
+                  Image.network(iconUrl, width: 50, height: 60),
             ],
           ),
           SizedBox(height: 8),
           Row(
             children: [
               Icon(Icons.location_on, color: Colors.white, size: 18),
-              Text("Washington DC, USA", style: GoogleFonts.poppins(color: Colors.white, fontSize: 14)),
+              Text(
+                cityName,
+                style: GoogleFonts.poppins(color: Colors.white, fontSize: 14),
+              ),
             ],
           ),
           SizedBox(height: 8),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("35° C", style: GoogleFonts.poppins(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
-              Row(
-                children: [
-                  _weatherIcon(Icons.water_drop, "10%"),
-                  _weatherIcon(Icons.wb_sunny, "0.5"),
-                  _weatherIcon(Icons.wind_power, "124 mph"),
-                ],
+              Text(
+                "$temperatureC° C",
+                style: GoogleFonts.poppins(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(width: 10,),
+              Flexible(
+                child: Row(
+                  children: [
+                    _weatherIcon(Icons.water_drop, "10%"),
+                    _weatherIcon(Icons.wb_sunny, "0.5"),
+                    _weatherIcon(Icons.wind_power, "$windSpeed mph"),
+                  ],
+                ),
               ),
             ],
           ),
@@ -91,7 +95,10 @@ class WeatherCard extends StatelessWidget {
       children: [
         Icon(icon, color: Colors.white, size: 16),
         SizedBox(width: 4),
-        Text(value, style: GoogleFonts.poppins(color: Colors.white, fontSize: 14)),
+        Text(
+          value,
+          style: GoogleFonts.poppins(color: Colors.white, fontSize: 14),
+        ),
         SizedBox(width: 12),
       ],
     );

@@ -1,30 +1,30 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../models/weather_model.dart';
 
-class WeatherApiService {
-  static final String baseUrl = "https://api.weatherapi.com/v1";
-  static final String apiKey = "b97a60bf605f417d8a4135940252703";
-  // static final String apiKey = dotenv.env['WEATHER_API_KEY'] ?? '';
-  String city = "Hanoi";
-  Future<Map<String, dynamic>> fetchWeather(String city) async {
-    final url = Uri.parse("$baseUrl/current.json?key=$apiKey&q=$city&aqi=no");
+class WeatherService {
+  static const String _apiKey = 'bc219aec11944417acd22604250504';
+  static const String _baseUrl = 'https://api.weatherapi.com/v1';
+  String city = 'Hà Nội';
 
-    print("Fetching data from: $url"); // Debug API URL
-    print("API Key: $apiKey");
-
-    final response = await http.get(url);
+  Future<Weather> fetchWeather(String city) async {
+    final response = await http.get(
+      Uri.parse('$_baseUrl/current.json?key=$_apiKey&q=$city&&lang=vi'),
+    );
 
     if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      print("API Response: $data"); // Debug dữ liệu trả về
-      return data;
+      final decoded = utf8.decode(response.bodyBytes);
+      final data = jsonDecode(decoded);
+      print(data);
+      if (data['current']['condition']['code'] == 1063) {
+        // Nếu mã là 1063, đổi thành 1183
+        data['current']['condition']['code'] = 1183;
+        data['current']['condition']['text'] = "Mưa nhẹ";  // Cập nhật text tương ứng
+      }
+      return Weather.fromJson(data, cityNameOverride: city);
     } else {
-      print("Error: ${response.statusCode} - ${response.body}");
-      throw Exception("Failed to load weather data");
+      throw Exception('Lỗi tải dữ liệu thời tiết');
     }
   }
-
 
 }
