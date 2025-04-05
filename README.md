@@ -29,49 +29,38 @@ Check out the **live web demo** -> _coming soon_
   </tr>
   <tr>
     <td><strong>Begin Screen</strong></td>
-    <td><img src="media/images/begin_screen.png" width="300"></td>
+    <td><img src="assets/images/Splash%20screen.jpg" width="300"></td>
     <td><strong>Get Start Screen</strong></td>
-    <td><img src="media/images/get_start.jpg" width="300"></td>
+    <td><img src="assets/images/Home.jpg" width="300"></td>
   </tr>
   <tr>
     <td><strong>Home Screen</strong></td>
-    <td><img src="media/images/home_screen.jpeg" width="300"></td>
-    <td><strong>Movie Screen</strong></td>
-    <td><img src="media/images/movie_screen.jpeg" width="300"></td>
-  </tr>
-  <tr>
-    <td><strong>Login Screen</strong></td>
-    <td><img src="media/images/login_screen.jpeg" width="300"></td>
-    <td><strong>Register Screen</strong></td>
-    <td><img src="media/images/register_screen.jpeg" width="300"></td>
+    <td><img src="assets/images/Home%202.jpg" width="300"></td>
+    <td><strong>Home2 Screen</strong></td>
+    <td><img src="assets/images/Home%203.jpg" width="300"></td>
   </tr>
   </tr>
     <tr>
-    <td><strong>All Movie Screen</strong></td>
-    <td><img src="media/images/all_movie_screen.jpeg" width="300"></td>
-    <td><strong>About Screen</strong></td>
-    <td><img src="media/images/about_screen.jpeg" width="300"></td>
+    <td><strong>Home3 Screen</strong></td>
+    <td><img src="assets/images/Home%204.jpg" width="300"></td>
+    <td><strong>My Location</strong></td>
+    <td><img src="assets/images/My%20Location.jpg" width="300"></td>
   </tr>
   <tr>
-    <td><strong>Booking Time</strong></td>
-    <td><img src="media/images/booking_time.jpeg" width="300"></td>
-    <td><strong>Booking Seat Type</strong></td>
-    <td><img src="media/images/booking_seat_type.jpeg" width="300"></td>
+    <td><strong>Search City</strong></td>
+    <td><img src="assets/images/Search%20City.jpg" width="300"></td>
+    <td><strong>News</strong></td>
+    <td><img src="assets/images/News.jpg" width="300"></td>
   </tr>
   <tr>
-    <td><strong>Booking Slot</strong></td>
-    <td><img src="media/images/booking_slot.jpg" width="300"></td>
-    <td><strong>Tickets Screen</strong></td>
-    <td><img src="media/images/tickets_screen.jpg" width="300"></td>
+    <td><strong>Home Sidebar</strong></td>
+    <td><img src="assets/images/Home%20Sidebar.jpg" width="300"></td>
+    <td><strong>Add City</strong></td>
+    <td><img src="assets/images/add_city.jpg" width="300"></td>
   </tr>
 </table>
 ## Liên Hệ
 - **Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ thêm, hãy liên hệ với tôi qua email: nguyenthanhtrungtt20@gmail.com.
-## Cài Đặt
 
-1. **Clone Repository**:
-
-```bash
-git clone https://github.com/yourusername/weather-app.git
 
 
