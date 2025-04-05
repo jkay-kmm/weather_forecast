@@ -56,7 +56,7 @@ Check out the **live web demo** -> _coming soon_
     <td><strong>Home Sidebar</strong></td>
     <td><img src="assets/images/Home%20Sidebar.jpg" width="300"></td>
     <td><strong>Add City</strong></td>
-    <td><img src="assets/images/add_city.jpg" width="300"></td>
+    <td><img src="assets/images/Add%20City.jpg" width="300"></td>
   </tr>
 </table>
 ## Liên Hệ
