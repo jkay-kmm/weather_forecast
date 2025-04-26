@@ -10,6 +10,7 @@ import 'package:weatherforecast/views/home_screen/widgets/wind.dart';
 
 import '../../viewmodels/weather_view_model.dart';
 import '../home_sidebar.dart';
+import '../news/news.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -57,10 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final conditionText = weatherProvider.weather?.conditionText ?? '';
     final iconUrl = weatherProvider.weather?.iconUrl ?? '';
     final windSpeed = weatherProvider.weather?.windSpeed ?? 0;
-
-    // if (weather == null) {
-    //   return Center(child: CircularProgressIndicator());
-    // }
 
     return Scaffold(
       backgroundColor: Colors.grey[100],
@@ -120,17 +117,27 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            WeatherCard(humidity: humidity,
-              temperatureC:temperature,
-              cityName: locationName, conditionText: conditionText,
-              iconUrl: iconUrl, windSpeed: windSpeed,
+            // Bọc WeatherCard trong SizedBox để tránh lỗi kích thước vô hạn
+            SizedBox(
+              height: 200,
+              child: WeatherCard(
+                humidity: humidity,
+                temperatureC: temperature,
+                cityName: locationName,
+                conditionText: conditionText,
+                iconUrl: iconUrl,
+                windSpeed: windSpeed,
+              ),
             ),
             SizedBox(height: 16),
             Text("Tin tức",
                 style: GoogleFonts.poppins(
                     fontSize: 16, fontWeight: FontWeight.w500)),
             SizedBox(height: 8),
-            NewSection(),
+            SizedBox(
+              height: 200,
+              child: NewScreen(),
+            ),
             SizedBox(height: 16),
             Text("Dự báo",
                 style: GoogleFonts.poppins(
@@ -154,4 +161,5 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
 }
